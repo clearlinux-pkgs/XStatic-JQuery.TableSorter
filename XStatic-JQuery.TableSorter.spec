@@ -4,16 +4,17 @@
 #
 Name     : XStatic-JQuery.TableSorter
 Version  : 2.14.5.1
-Release  : 16
+Release  : 17
 URL      : http://pypi.debian.net/XStatic-JQuery.TableSorter/XStatic-JQuery.TableSorter-2.14.5.1.tar.gz
 Source0  : http://pypi.debian.net/XStatic-JQuery.TableSorter/XStatic-JQuery.TableSorter-2.14.5.1.tar.gz
 Summary  : JQuery.TableSorter 2.14.5 (XStatic packaging standard)
 Group    : Development/Tools
 License  : GPL-2.0+ MIT
+Requires: XStatic-JQuery.TableSorter-python3
 Requires: XStatic-JQuery.TableSorter-python
+BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
@@ -33,10 +34,20 @@ BuildRequires : setuptools
 %package python
 Summary: python components for the XStatic-JQuery.TableSorter package.
 Group: Default
+Requires: XStatic-JQuery.TableSorter-python3
 Provides: xstatic-jquery.tablesorter-python
 
 %description python
 python components for the XStatic-JQuery.TableSorter package.
+
+
+%package python3
+Summary: python3 components for the XStatic-JQuery.TableSorter package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the XStatic-JQuery.TableSorter package.
 
 
 %prep
@@ -47,15 +58,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503088870
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1532214632
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1503088870
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -65,5 +73,7 @@ echo ----[ mark ]----
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python2*/*
+
+%files python3
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
