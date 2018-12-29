@@ -4,7 +4,7 @@
 #
 Name     : XStatic-JQuery.TableSorter
 Version  : 2.14.5.1
-Release  : 17
+Release  : 18
 URL      : http://pypi.debian.net/XStatic-JQuery.TableSorter/XStatic-JQuery.TableSorter-2.14.5.1.tar.gz
 Source0  : http://pypi.debian.net/XStatic-JQuery.TableSorter/XStatic-JQuery.TableSorter-2.14.5.1.tar.gz
 Summary  : JQuery.TableSorter 2.14.5 (XStatic packaging standard)
