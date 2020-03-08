@@ -4,7 +4,7 @@
 #
 Name     : XStatic-JQuery.TableSorter
 Version  : 2.14.5.1
-Release  : 23
+Release  : 24
 URL      : http://pypi.debian.net/XStatic-JQuery.TableSorter/XStatic-JQuery.TableSorter-2.14.5.1.tar.gz
 Source0  : http://pypi.debian.net/XStatic-JQuery.TableSorter/XStatic-JQuery.TableSorter-2.14.5.1.tar.gz
 Summary  : JQuery.TableSorter 2.14.5 (XStatic packaging standard)
@@ -15,18 +15,17 @@ Requires: XStatic-JQuery.TableSorter-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-XStatic-JQuery.TableSorter
 --------------
-
-JQuery.TableSorter JavaScript library packaged for setuptools (easy_install) / pip.
-
-This package is intended to be used by **any** project that needs these files.
-
-It intentionally does **not** provide any extra code except some metadata
-**nor** has any extra requirements. You MAY use some minimal support code from
-the XStatic base package, if you like.
-
-You can find more info about the xstatic packaging way in the package `XStatic`.
+        
+        JQuery.TableSorter JavaScript library packaged for setuptools (easy_install) / pip.
+        
+        This package is intended to be used by **any** project that needs these files.
+        
+        It intentionally does **not** provide any extra code except some metadata
+        **nor** has any extra requirements. You MAY use some minimal support code from
+        the XStatic base package, if you like.
+        
+        You can find more info about the xstatic packaging way in the package `XStatic`.
 
 %package python
 Summary: python components for the XStatic-JQuery.TableSorter package.
@@ -42,7 +41,7 @@ python components for the XStatic-JQuery.TableSorter package.
 Summary: python3 components for the XStatic-JQuery.TableSorter package.
 Group: Default
 Requires: python3-core
-Provides: pypi(XStatic-JQuery.TableSorter)
+Provides: pypi(xstatic_jquery.tablesorter)
 
 %description python3
 python3 components for the XStatic-JQuery.TableSorter package.
@@ -57,8 +56,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582851028
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583695564
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
